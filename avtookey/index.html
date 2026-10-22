@@ -272,14 +272,14 @@
     }
     .chip:hover { border-color: var(--accent); }
     .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-    .catalog { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .catalog { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .item { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
     .item[hidden] { display: none; }
     .item img { width: 100%; height: auto; aspect-ratio: 5 / 4; object-fit: cover; background: var(--bg-2); }
     .item-body { padding: 16px; display: flex; flex-direction: column; flex: 1; }
-    .item h3 { font-size: 16px; margin-bottom: 6px; }
+    .item h3 { font-size: 16px; margin-bottom: 6px; hyphens: auto; overflow-wrap: break-word; }
     .item p { margin: 0 0 14px; color: var(--muted); font-size: 14px; flex: 1; }
-    .item-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .item-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; }
     .item-foot b { font-size: 18px; white-space: nowrap; }
     .item-btn { font-size: 14px; font-weight: 700; color: var(--accent-2); text-decoration: none; }
     .item-btn:hover { text-decoration: underline; }
@@ -305,7 +305,6 @@
       .nav { display: none; }
       .hero-inner, .booking, .contacts, .rev-wrap { grid-template-columns: 1fr; }
       .services-grid, .adv-grid { grid-template-columns: 1fr 1fr; }
-      .catalog { grid-template-columns: repeat(3, 1fr); }
       .gallery { grid-auto-rows: 200px; }
       .steps { grid-template-columns: 1fr 1fr; }
       .strip-inner { grid-template-columns: 1fr 1fr; }
@@ -321,16 +320,19 @@
       .services-grid, .adv-grid, .steps, .form-row { grid-template-columns: 1fr; }
       .catalog { grid-template-columns: 1fr 1fr; gap: 12px; }
       .item-body { padding: 12px; }
-      .item h3 { font-size: 15px; }
+      .item h3 { font-size: 15px; margin-bottom: 10px; }
+      .catalog .item:last-child:nth-child(odd) { grid-column: span 2; }
+      .catalog .item:last-child:nth-child(odd) img { aspect-ratio: 2 / 1; }
       .item p { display: none; }
       .item-foot { flex-direction: column; align-items: flex-start; gap: 4px; }
       .item-foot b { font-size: 16px; }
       .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 140px; gap: 8px; }
       .gallery button:first-child { grid-column: span 2; grid-row: span 1; }
-      .topbar .tb-hours { display: none; }
+      .topbar .tb-hours, .topbar .tb-phone { display: none; }
+      .topbar-inner { justify-content: center; }
       .hero-contacts b { font-size: 20px; }
       .hero-actions .btn { width: 100%; }
-      .bar-row { grid-template-columns: 110px 1fr 42px; font-size: 14px; }
+      .bar-row { grid-template-columns: 124px 1fr 40px; gap: 10px; font-size: 14px; }
       .form { padding: 22px; }
       .callbar {
         display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
@@ -348,7 +350,7 @@
     <div class="container topbar-inner">
       <a href="https://yandex.ru/maps/org/avtookey/66669698937/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><b>Самара, ул. Дыбенко, 99</b></a>
       <span class="tb-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Ежедневно 08:00–22:00</span>
-      <a href="tel:+79277002671"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><b>+7 927 700-26-71</b></a>
+      <a class="tb-phone" href="tel:+79277002671"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><b>+7 927 700-26-71</b></a>
     </div>
   </div>
 
@@ -414,8 +416,8 @@
     <section class="strip" aria-label="Коротко о сервисе">
       <div class="container strip-inner">
         <div class="strip-item"><b>1 год</b><span>гарантия на работу и запчасти</span></div>
-        <div class="strip-item"><b>4,8 ★</b><span>оценка клиентов на Яндекс.Картах</span></div>
-        <div class="strip-item"><b>08–22</b><span>принимаем автомобили каждый день</span></div>
+        <div class="strip-item"><b>4,8 ★</b><span>рейтинг на Яндекс.Картах</span></div>
+        <div class="strip-item"><b>08–22</b><span>работаем без выходных</span></div>
         <div class="strip-item"><b>от 300 ₽</b><span>стоимость работ</span></div>
       </div>
     </section>
@@ -569,7 +571,7 @@
           <article class="item" data-cat="electric">
             <img src="img/catalog/item-22.jpg" alt="Диагностика электрооборудования" loading="lazy" width="560" height="448" />
             <div class="item-body">
-              <h3>Диагностика электрооборудования</h3>
+              <h3>Диагностика электро&shy;оборудования</h3>
               <p>Аккумулятор, генератор, стартер, проводка, ЭБУ.</p>
               <div class="item-foot"><b>от 1 000 ₽</b><a href="#booking" class="item-btn" data-service="Диагностика электрооборудования">Записаться</a></div>
             </div>
@@ -593,7 +595,7 @@
           <article class="item" data-cat="electric">
             <img src="img/catalog/item-16.jpg" alt="Ремонт и перепрограммирование ЭБУ" loading="lazy" width="560" height="448" />
             <div class="item-body">
-              <h3>Ремонт и перепрограммирование ЭБУ</h3>
+              <h3>Ремонт и пере&shy;программирование ЭБУ</h3>
               <p>Восстановление после замыкания, прошивка, адаптация и привязка блоков.</p>
               <div class="item-foot"><b>от 5 000 ₽</b><a href="#booking" class="item-btn" data-service="Ремонт и перепрограммирование ЭБУ">Записаться</a></div>
             </div>
@@ -617,7 +619,7 @@
           <article class="item" data-cat="ac">
             <img src="img/catalog/item-10.jpg" alt="Ремонт автокондиционера" loading="lazy" width="560" height="448" />
             <div class="item-body">
-              <h3>Ремонт автокондиционера</h3>
+              <h3>Ремонт авто&shy;кондиционера</h3>
               <p>Утечки хладагента, неисправности компрессора, засор фильтров.</p>
               <div class="item-foot"><b>2 000 ₽</b><a href="#booking" class="item-btn" data-service="Ремонт автокондиционера">Записаться</a></div>
             </div>
@@ -633,7 +635,7 @@
           <article class="item" data-cat="diag">
             <img src="img/catalog/item-12.jpg" alt="Проверка дымогенератором" loading="lazy" width="560" height="448" />
             <div class="item-body">
-              <h3>Проверка дымогенератором</h3>
+              <h3>Проверка дымо&shy;генератором</h3>
               <p>Поиск подсосов во впуске, вентиляции картера, топливном баке.</p>
               <div class="item-foot"><b>от 500 ₽</b><a href="#booking" class="item-btn" data-service="Проверка дымогенератором">Записаться</a></div>
             </div>
@@ -795,9 +797,9 @@
               <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
               <span><b>+7 927 700-26-71</b><small>мастер-приёмщик</small></span>
             </a>
-            <a class="contact-card" href="https://t.me/+79277002671" target="_blank" rel="noopener">
-              <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7z"/><path d="M22 2 11 13"/></svg></span>
-              <span><b>Написать в Telegram</b><small>ответим в рабочее время</small></span>
+            <a class="contact-card" href="https://max.ru/u/f9LHodD0cOJndv8udDyRodgySHWFIUyXV2TjIwxGkcTwQ1GvSUWzvm9BAxY" target="_blank" rel="noopener">
+              <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.1A8.5 8.5 0 1 1 21 12z"/></svg></span>
+              <span><b>Написать в MAX</b><small>ответим в рабочее время</small></span>
             </a>
           </div>
         </div>

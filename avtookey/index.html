@@ -10,7 +10,7 @@
   <meta property="og:description" content="Ремонт отечественных и иномарок, магазин запчастей, гарантия 1 год. Запись: +7 927 700-26-71." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ru_RU" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff6a13'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='%23121417'%3EAO%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e3262f'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='%23ffffff'%3EAO%3C/text%3E%3C/svg%3E" />
 
   <script type="application/ld+json">
   {
@@ -40,8 +40,8 @@
       --line: #2e333b;
       --text: #f2f3f5;
       --muted: #a6adb8;
-      --accent: #ff6a13;
-      --accent-2: #ff8a3d;
+      --accent: #e3262f;
+      --accent-2: #ff464e;
       --ok: #3ccf7a;
       --radius: 16px;
       --container: 1160px;
@@ -79,7 +79,7 @@
       font-family: inherit;
     }
     .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: var(--accent); color: #121417; }
+    .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: var(--accent-2); }
     .btn-ghost { border-color: var(--line); color: var(--text); background: transparent; }
     .btn-ghost:hover { border-color: var(--accent); }
@@ -109,7 +109,7 @@
     .hero::before {
       content: ""; position: absolute; inset: 0;
       background:
-        radial-gradient(600px 400px at 85% 20%, rgba(255,106,19,.16), transparent 70%),
+        radial-gradient(600px 400px at 85% 20%, rgba(227,38,47,.18), transparent 70%),
         repeating-linear-gradient(135deg, rgba(255,255,255,.018) 0 2px, transparent 2px 14px);
       pointer-events: none;
     }
@@ -151,7 +151,7 @@
     }
     .svc-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
     .svc-icon {
-      width: 44px; height: 44px; border-radius: 12px; background: rgba(255,106,19,.12); color: var(--accent);
+      width: 44px; height: 44px; border-radius: 12px; background: rgba(227,38,47,.14); color: var(--accent);
       display: grid; place-items: center; flex-shrink: 0;
     }
     .svc-icon svg { width: 24px; height: 24px; }
@@ -199,7 +199,7 @@
     .step::before {
       counter-increment: s; content: counter(s);
       width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
-      background: var(--accent); color: #121417; font-weight: 900; margin-bottom: 14px;
+      background: var(--accent); color: #fff; font-weight: 900; margin-bottom: 14px;
     }
     .step h3 { font-size: 17px; margin-bottom: 6px; }
     .step p { margin: 0; color: var(--muted); font-size: 15px; }
@@ -241,6 +241,63 @@
     .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
     .footer a { color: var(--muted); }
 
+    /* Top bar */
+    .topbar { background: #0b0c0e; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .topbar-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 22px; padding: 8px 0; }
+    .topbar a, .topbar span { color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .topbar a:hover { color: var(--text); }
+    .topbar b { color: var(--text); }
+    .topbar svg { width: 15px; height: 15px; color: var(--accent); flex-shrink: 0; }
+    .logo-img { height: 34px; width: auto; background: #fff; border-radius: 8px; padding: 4px 8px; }
+
+    /* Hero contacts + photo */
+    .hero-contacts { display: grid; gap: 10px; margin: 0 0 26px; }
+    .hero-contacts a, .hero-contacts div { display: flex; align-items: center; gap: 12px; text-decoration: none; font-size: 18px; }
+    .hero-contacts b { font-size: 22px; }
+    .hero-contacts svg { width: 22px; height: 22px; color: var(--accent); flex-shrink: 0; }
+    .hero-photo { position: relative; border-radius: 22px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 30px 60px rgba(0,0,0,.35); }
+    .hero-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .hero-badge {
+      position: absolute; left: 16px; bottom: 16px; right: 16px; display: flex; align-items: center; gap: 14px;
+      background: rgba(18,20,23,.9); backdrop-filter: blur(6px); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px;
+    }
+    .hero-badge .rating-num { font-size: 34px; }
+    .hero-badge small { color: var(--muted); display: block; font-size: 13px; }
+
+    /* Catalog */
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+    .chip {
+      padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--text);
+      font: inherit; font-size: 15px; cursor: pointer;
+    }
+    .chip:hover { border-color: var(--accent); }
+    .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .catalog { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .item { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+    .item[hidden] { display: none; }
+    .item img { width: 100%; height: auto; aspect-ratio: 5 / 4; object-fit: cover; background: var(--bg-2); }
+    .item-body { padding: 16px; display: flex; flex-direction: column; flex: 1; }
+    .item h3 { font-size: 16px; margin-bottom: 6px; }
+    .item p { margin: 0 0 14px; color: var(--muted); font-size: 14px; flex: 1; }
+    .item-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .item-foot b { font-size: 18px; white-space: nowrap; }
+    .item-btn { font-size: 14px; font-weight: 700; color: var(--accent-2); text-decoration: none; }
+    .item-btn:hover { text-decoration: underline; }
+
+    /* Gallery */
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 260px; gap: 12px; }
+    .gallery button { padding: 0; border: 0; border-radius: 14px; overflow: hidden; cursor: zoom-in; background: var(--card); }
+    .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+    .gallery button:hover img { transform: scale(1.04); }
+    .lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,.92); display: none; align-items: center; justify-content: center; padding: 20px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 88vh; border-radius: 10px; }
+    .lb-btn { position: absolute; background: rgba(255,255,255,.12); color: #fff; border: 0; width: 48px; height: 48px; border-radius: 50%; font-size: 24px; cursor: pointer; }
+    .lb-btn:hover { background: rgba(255,255,255,.25); }
+    .lb-close { top: 16px; right: 16px; }
+    .lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+    .lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
+
     /* Mobile call bar */
     .callbar { display: none; }
 
@@ -248,6 +305,8 @@
       .nav { display: none; }
       .hero-inner, .booking, .contacts, .rev-wrap { grid-template-columns: 1fr; }
       .services-grid, .adv-grid { grid-template-columns: 1fr 1fr; }
+      .catalog { grid-template-columns: repeat(3, 1fr); }
+      .gallery { grid-auto-rows: 200px; }
       .steps { grid-template-columns: 1fr 1fr; }
       .strip-inner { grid-template-columns: 1fr 1fr; }
       .strip-item:nth-child(2) { border-right: 0; }
@@ -260,6 +319,16 @@
       .header-phone small { display: none; }
       .hero { padding: 40px 0 56px; }
       .services-grid, .adv-grid, .steps, .form-row { grid-template-columns: 1fr; }
+      .catalog { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .item-body { padding: 12px; }
+      .item h3 { font-size: 15px; }
+      .item p { display: none; }
+      .item-foot { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .item-foot b { font-size: 16px; }
+      .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 140px; gap: 8px; }
+      .gallery button:first-child { grid-column: span 2; grid-row: span 1; }
+      .topbar .tb-hours { display: none; }
+      .hero-contacts b { font-size: 20px; }
       .hero-actions .btn { width: 100%; }
       .bar-row { grid-template-columns: 110px 1fr 42px; font-size: 14px; }
       .form { padding: 22px; }
@@ -275,14 +344,22 @@
 </head>
 <body>
 
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <a href="https://yandex.ru/maps/org/avtookey/66669698937/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><b>Самара, ул. Дыбенко, 99</b></a>
+      <span class="tb-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Ежедневно 08:00–22:00</span>
+      <a href="tel:+79277002671"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><b>+7 927 700-26-71</b></a>
+    </div>
+  </div>
+
   <header class="header">
     <div class="container header-inner">
       <a href="#top" class="logo" aria-label="АвтоОкей — на главную">
-        <span class="logo-mark">АО</span>
-        <span>АвтоОкей</span>
+        <img class="logo-img" src="img/logo.jpg" alt="Автосервис АвтоОкей" width="204" height="34" />
       </a>
       <nav class="nav" aria-label="Основное меню">
         <a href="#services">Услуги и цены</a>
+        <a href="#gallery">Фото</a>
         <a href="#advantages">Почему мы</a>
         <a href="#reviews">Отзывы</a>
         <a href="#contacts">Контакты</a>
@@ -303,41 +380,33 @@
     <section class="hero">
       <div class="container hero-inner">
         <div>
-          <span class="eyebrow">Автосервис в Самаре · ул. Дыбенко, 99</span>
+          <span class="eyebrow">Автосервис и магазин автозапчастей в Самаре</span>
           <h1>Ремонт автомобиля <span>с гарантией 1 год</span> на работу и запчасти</h1>
+          <div class="hero-contacts">
+            <a href="https://yandex.ru/maps/org/avtookey/66669698937/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><b>ул. Дыбенко, 99</b></span></a>
+            <a href="tel:+79277002671"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span><b>+7 927 700-26-71</b></span></a>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Ежедневно 08:00–22:00</span></div>
+          </div>
           <p class="hero-sub">
             Диагностика, двигатель, КПП и АКПП, ходовая, электрика, кондиционер, развал-схождение.
-            Обслуживаем отечественные, европейские, японские, корейские и китайские автомобили.
-            Запчасти — в собственном магазине.
+            Отечественные автомобили и иномарки. Запчасти — в собственном магазине.
           </p>
           <div class="hero-actions">
             <a href="#booking" class="btn btn-primary">Записаться на ремонт</a>
-            <a href="tel:+79277002671" class="btn btn-ghost">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-              Позвонить мастеру
-            </a>
-          </div>
-          <div class="hero-meta">
-            <span>Работаем <b>ежедневно 08:00–22:00</b></span>
-            <span>Оплата <b>наличными, картой, по безналу</b></span>
+            <a href="tel:+79277002671" class="btn btn-ghost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Позвонить мастеру</a>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Рейтинг и гарантии">
-          <div class="rating">
+        <div class="hero-photo">
+          <img src="img/photos/photo-01.jpg" alt="Здание автосервиса АвтоОкей на ул. Дыбенко, 99" width="800" height="600" />
+          <div class="hero-badge">
             <div class="rating-num">4,8</div>
             <div>
               <div class="stars" aria-label="Оценка 4,8 из 5">★★★★★</div>
               <small>рейтинг на Яндекс.Картах</small>
             </div>
           </div>
-          <ul class="hero-list">
-            <li><span class="check">✓</span><span><b>Гарантия 1 год</b> на все виды работ и запчасти</span></li>
-            <li><span class="check">✓</span><span>Запчасти <b>в оригинале и аналогах</b>, есть под заказ</span></li>
-            <li><span class="check">✓</span><span>Зона ожидания, <b>Wi‑Fi</b> и парковка</span></li>
-            <li><span class="check">✓</span><span>Скидки и <b>подарочные сертификаты</b></span></li>
-          </ul>
-        </aside>
+        </div>
       </div>
     </section>
 
@@ -355,98 +424,265 @@
     <section class="section" id="services">
       <div class="container">
         <span class="eyebrow">Услуги и цены</span>
-        <h2>Что мы ремонтируем</h2>
+        <h2>Каталог услуг</h2>
         <p class="section-lead">Цены на работы без учёта стоимости запчастей и расходников. Точную стоимость мастер называет после осмотра или диагностики автомобиля.</p>
 
-        <div class="services-grid">
+        <div class="filters" role="group" aria-label="Фильтр услуг">
+          <button type="button" class="chip active" data-filter="all">Все</button>
+          <button type="button" class="chip" data-filter="engine">Двигатель и ГРМ</button>
+          <button type="button" class="chip" data-filter="kpp">КПП и АКПП</button>
+          <button type="button" class="chip" data-filter="chassis">Ходовая</button>
+          <button type="button" class="chip" data-filter="electric">Электрика</button>
+          <button type="button" class="chip" data-filter="ac">Кондиционер</button>
+          <button type="button" class="chip" data-filter="diag">Диагностика</button>
+        </div>
 
-          <article class="svc">
-            <div class="svc-head">
-              <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="7" width="14" height="10" rx="2"/><path d="M17 10h2l2 2v2l-2 2h-2M7 7V4h6v3M6 17v3M14 17v3"/></svg></div>
-              <h3>Двигатель и ГРМ</h3>
+        <div class="catalog" id="catalog">
+          <article class="item" data-cat="engine">
+            <img src="img/catalog/item-03.jpg" alt="Замена масла и фильтра с промывкой — иномарки" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Замена масла и фильтра с промывкой — иномарки</h3>
+              <p>Промывка двигателя, замена масла и масляного фильтра. Для всех марок.</p>
+              <div class="item-foot"><b>800 ₽</b><a href="#booking" class="item-btn" data-service="Замена масла и фильтра с промывкой — иномарки">Записаться</a></div>
             </div>
-            <ul class="price-list">
-              <li><span class="n">Замена масла и фильтра с промывкой</span><span class="p">от 800 ₽</span></li>
-              <li><span class="n">Замена воздушного фильтра (ВАЗ / иномарки)</span><span class="p">300 / 400 ₽</span></li>
-              <li><span class="n">Замена ремня (цепи) ГРМ</span><span class="p">от 4 000 ₽</span></li>
-              <li><span class="n">Регулировка клапанов ВАЗ</span><span class="p">от 2 200 ₽</span></li>
-              <li><span class="n">Ремонт ДВС</span><span class="p">от 15 000 ₽</span></li>
-            </ul>
           </article>
-
-          <article class="svc">
-            <div class="svc-head">
-              <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div>
-              <h3>Коробка передач</h3>
+          <article class="item" data-cat="engine">
+            <img src="img/catalog/item-04.jpg" alt="Замена масла и фильтра с промывкой — ВАЗ" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Замена масла и фильтра с промывкой — ВАЗ</h3>
+              <p>Промывка двигателя, замена масла и масляного фильтра. Для всех моделей ВАЗ.</p>
+              <div class="item-foot"><b>800 ₽</b><a href="#booking" class="item-btn" data-service="Замена масла и фильтра с промывкой — ВАЗ">Записаться</a></div>
             </div>
-            <ul class="price-list">
-              <li><span class="n">Замена масла в МКПП (ВАЗ / иномарки)</span><span class="p">700 / 800 ₽</span></li>
-              <li><span class="n">Частичная замена масла в АКПП</span><span class="p">от 3 000 ₽</span></li>
-              <li><span class="n">Замена масла в муфте Haldex</span><span class="p">от 2 500 ₽</span></li>
-              <li><span class="n">Ремонт КПП (ВАЗ, иномарки)</span><span class="p">от 1 000 ₽</span></li>
-              <li><span class="n">Ремонт АКПП</span><span class="p">уточняйте</span></li>
-            </ul>
           </article>
-
-          <article class="svc">
-            <div class="svc-head">
-              <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg></div>
-              <h3>Ходовая и развал</h3>
+          <article class="item" data-cat="engine">
+            <img src="img/catalog/item-05.jpg" alt="Замена воздушного фильтра — иномарки" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Замена воздушного фильтра — иномарки</h3>
+              <p>Установка фильтра и проверка системы впуска.</p>
+              <div class="item-foot"><b>400 ₽</b><a href="#booking" class="item-btn" data-service="Замена воздушного фильтра — иномарки">Записаться</a></div>
             </div>
-            <ul class="price-list">
-              <li><span class="n">Комплексный осмотр ходовой ВАЗ</span><span class="p">500 ₽</span></li>
-              <li><span class="n">Комплексный осмотр ходовой иномарки</span><span class="p">700 ₽</span></li>
-              <li><span class="n">Развал-схождение</span><span class="p">от 1 300 ₽</span></li>
-              <li><span class="n">Слесарные работы любой сложности</span><span class="p">от 500 ₽</span></li>
-              <li><span class="n">Шиномонтаж</span><span class="p">уточняйте</span></li>
-            </ul>
           </article>
-
-          <article class="svc">
-            <div class="svc-head">
-              <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
-              <h3>Автоэлектрика</h3>
+          <article class="item" data-cat="engine">
+            <img src="img/catalog/item-06.jpg" alt="Замена воздушного фильтра — ВАЗ" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Замена воздушного фильтра — ВАЗ</h3>
+              <p>Оригинальные и качественные неоригинальные фильтры.</p>
+              <div class="item-foot"><b>300 ₽</b><a href="#booking" class="item-btn" data-service="Замена воздушного фильтра — ВАЗ">Записаться</a></div>
             </div>
-            <ul class="price-list">
-              <li><span class="n">Диагностика электрооборудования</span><span class="p">от 1 000 ₽</span></li>
-              <li><span class="n">Устранение неисправностей электрики</span><span class="p">от 500 ₽</span></li>
-              <li><span class="n">Ремонт стартера</span><span class="p">1 000 ₽</span></li>
-              <li><span class="n">Ремонт и перепрограммирование ЭБУ</span><span class="p">от 5 000 ₽</span></li>
-              <li><span class="n">Установка доп. оборудования</span><span class="p">от 500 ₽</span></li>
-            </ul>
           </article>
-
-          <article class="svc">
-            <div class="svc-head">
-              <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1 19.1 4.9"/></svg></div>
-              <h3>Кондиционер</h3>
+          <article class="item" data-cat="engine">
+            <img src="img/catalog/item-24.jpg" alt="Замена ремня (цепи) ГРМ" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Замена ремня (цепи) ГРМ</h3>
+              <p>Замена ремня или цепи ГРМ, натяжных роликов, помпы.</p>
+              <div class="item-foot"><b>от 4 000 ₽</b><a href="#booking" class="item-btn" data-service="Замена ремня (цепи) ГРМ">Записаться</a></div>
             </div>
-            <ul class="price-list">
-              <li><span class="n">Заправка кондиционера любого авто (без стоимости фреона)</span><span class="p">от 2 000 ₽</span></li>
-              <li><span class="n">Ремонт автокондиционера</span><span class="p">2 000 ₽</span></li>
-            </ul>
           </article>
-
-          <article class="svc">
-            <div class="svc-head">
-              <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
-              <h3>Диагностика и чистка</h3>
+          <article class="item" data-cat="engine">
+            <img src="img/catalog/item-25.jpg" alt="Регулировка клапанов ВАЗ" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Регулировка клапанов ВАЗ</h3>
+              <p>Настройка тепловых зазоров на 8- и 16-клапанных двигателях ВАЗ.</p>
+              <div class="item-foot"><b>от 2 200 ₽</b><a href="#booking" class="item-btn" data-service="Регулировка клапанов ВАЗ">Записаться</a></div>
             </div>
-            <ul class="price-list">
-              <li><span class="n">Эндоскопия двигателя</span><span class="p">от 2 000 ₽</span></li>
-              <li><span class="n">Проверка дымогенератором</span><span class="p">от 500 ₽</span></li>
-              <li><span class="n">Ультразвуковая чистка форсунок</span><span class="p">от 800 ₽</span></li>
-              <li><span class="n">Экспресс-чистка форсунок без снятия</span><span class="p">от 3 500 ₽</span></li>
-            </ul>
+          </article>
+          <article class="item" data-cat="engine">
+            <img src="img/catalog/item-15.jpg" alt="Ремонт ДВС" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Ремонт ДВС</h3>
+              <p>Бензиновые и дизельные двигатели: поршни, кольца, клапаны, ГБЦ. Капитальный и частичный ремонт.</p>
+              <div class="item-foot"><b>от 15 000 ₽</b><a href="#booking" class="item-btn" data-service="Ремонт ДВС">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="kpp">
+            <img src="img/catalog/item-01.jpg" alt="Замена масла в МКПП — иномарки" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Замена масла в МКПП — иномарки</h3>
+              <p>Подбор масла по спецификации производителя.</p>
+              <div class="item-foot"><b>800 ₽</b><a href="#booking" class="item-btn" data-service="Замена масла в МКПП — иномарки">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="kpp">
+            <img src="img/catalog/item-02.jpg" alt="Замена масла в МКПП — ВАЗ" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Замена масла в МКПП — ВАЗ</h3>
+              <p>Для всех моделей ВАЗ.</p>
+              <div class="item-foot"><b>700 ₽</b><a href="#booking" class="item-btn" data-service="Замена масла в МКПП — ВАЗ">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="kpp">
+            <img src="img/catalog/item-26.jpg" alt="Частичная замена масла в АКПП" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Частичная замена масла в АКПП</h3>
+              <p>Обслуживание автоматических коробок: смена масла, фильтра, промывка поддона.</p>
+              <div class="item-foot"><b>от 3 000 ₽</b><a href="#booking" class="item-btn" data-service="Частичная замена масла в АКПП">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="kpp">
+            <img src="img/catalog/item-14.jpg" alt="Замена масла в муфте Haldex" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Замена масла в муфте Haldex</h3>
+              <p>Обслуживание полного привода Volkswagen, Audi, Skoda и других марок.</p>
+              <div class="item-foot"><b>от 2 500 ₽</b><a href="#booking" class="item-btn" data-service="Замена масла в муфте Haldex">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="kpp">
+            <img src="img/catalog/item-11.jpg" alt="Ремонт КПП (ВАЗ, иномарки)" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Ремонт КПП (ВАЗ, иномарки)</h3>
+              <p>Механические, автоматические и роботизированные коробки: течи, шумы, износ.</p>
+              <div class="item-foot"><b>от 1 000 ₽</b><a href="#booking" class="item-btn" data-service="Ремонт КПП (ВАЗ, иномарки)">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="chassis">
+            <img src="img/catalog/item-08.jpg" alt="Комплексный осмотр ходовой — ВАЗ" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Комплексный осмотр ходовой — ВАЗ</h3>
+              <p>Амортизаторы, рычаги, сайлентблоки, шаровые опоры, наконечники, рулевая рейка.</p>
+              <div class="item-foot"><b>500 ₽</b><a href="#booking" class="item-btn" data-service="Комплексный осмотр ходовой — ВАЗ">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="chassis">
+            <img src="img/catalog/item-07.jpg" alt="Комплексный осмотр ходовой — иномарки" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Комплексный осмотр ходовой — иномарки</h3>
+              <p>Подвеска и рулевое управление: износ, люфты, повреждения.</p>
+              <div class="item-foot"><b>700 ₽</b><a href="#booking" class="item-btn" data-service="Комплексный осмотр ходовой — иномарки">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="chassis">
+            <img src="img/catalog/item-13.jpg" alt="Развал-схождение" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Развал-схождение</h3>
+              <p>3D-стенд, легковые автомобили и внедорожники.</p>
+              <div class="item-foot"><b>от 1 300 ₽</b><a href="#booking" class="item-btn" data-service="Развал-схождение">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="chassis">
+            <img src="img/catalog/item-23.jpg" alt="Слесарные работы любой сложности" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Слесарные работы любой сложности</h3>
+              <p>Сайлентблоки, рычаги, амортизаторы, стойки.</p>
+              <div class="item-foot"><b>от 500 ₽</b><a href="#booking" class="item-btn" data-service="Слесарные работы любой сложности">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="electric">
+            <img src="img/catalog/item-22.jpg" alt="Диагностика электрооборудования" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Диагностика электрооборудования</h3>
+              <p>Аккумулятор, генератор, стартер, проводка, ЭБУ.</p>
+              <div class="item-foot"><b>от 1 000 ₽</b><a href="#booking" class="item-btn" data-service="Диагностика электрооборудования">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="electric">
+            <img src="img/catalog/item-21.jpg" alt="Ремонт электрики автомобиля" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Ремонт электрики автомобиля</h3>
+              <p>Проводка, генераторы, стартеры, датчики.</p>
+              <div class="item-foot"><b>от 500 ₽</b><a href="#booking" class="item-btn" data-service="Ремонт электрики автомобиля">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="electric">
+            <img src="img/catalog/item-27.jpg" alt="Ремонт стартера" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Ремонт стартера</h3>
+              <p>Диагностика и ремонт стартера.</p>
+              <div class="item-foot"><b>1 000 ₽</b><a href="#booking" class="item-btn" data-service="Ремонт стартера">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="electric">
+            <img src="img/catalog/item-16.jpg" alt="Ремонт и перепрограммирование ЭБУ" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Ремонт и перепрограммирование ЭБУ</h3>
+              <p>Восстановление после замыкания, прошивка, адаптация и привязка блоков.</p>
+              <div class="item-foot"><b>от 5 000 ₽</b><a href="#booking" class="item-btn" data-service="Ремонт и перепрограммирование ЭБУ">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="electric">
+            <img src="img/catalog/item-20.jpg" alt="Установка доп. оборудования" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Установка доп. оборудования</h3>
+              <p>Камеры, сигнализации, парктроники, обогреватели, автозвук.</p>
+              <div class="item-foot"><b>от 500 ₽</b><a href="#booking" class="item-btn" data-service="Установка доп. оборудования">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="ac">
+            <img src="img/catalog/item-09.jpg" alt="Заправка кондиционера" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Заправка кондиционера</h3>
+              <p>Любой автомобиль. Цена без стоимости хладагента.</p>
+              <div class="item-foot"><b>от 2 000 ₽</b><a href="#booking" class="item-btn" data-service="Заправка кондиционера">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="ac">
+            <img src="img/catalog/item-10.jpg" alt="Ремонт автокондиционера" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Ремонт автокондиционера</h3>
+              <p>Утечки хладагента, неисправности компрессора, засор фильтров.</p>
+              <div class="item-foot"><b>2 000 ₽</b><a href="#booking" class="item-btn" data-service="Ремонт автокондиционера">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="diag">
+            <img src="img/catalog/item-17.jpg" alt="Эндоскопия двигателя" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Эндоскопия двигателя</h3>
+              <p>Осмотр цилиндров, клапанов и нагара без разборки двигателя.</p>
+              <div class="item-foot"><b>от 2 000 ₽</b><a href="#booking" class="item-btn" data-service="Эндоскопия двигателя">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="diag">
+            <img src="img/catalog/item-12.jpg" alt="Проверка дымогенератором" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Проверка дымогенератором</h3>
+              <p>Поиск подсосов во впуске, вентиляции картера, топливном баке.</p>
+              <div class="item-foot"><b>от 500 ₽</b><a href="#booking" class="item-btn" data-service="Проверка дымогенератором">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="diag">
+            <img src="img/catalog/item-19.jpg" alt="Ультразвуковая чистка форсунок" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Ультразвуковая чистка форсунок</h3>
+              <p>Проверка на стенде и чистка форсунок ультразвуком.</p>
+              <div class="item-foot"><b>от 800 ₽</b><a href="#booking" class="item-btn" data-service="Ультразвуковая чистка форсунок">Записаться</a></div>
+            </div>
+          </article>
+          <article class="item" data-cat="diag">
+            <img src="img/catalog/item-18.jpg" alt="Экспресс-чистка форсунок без снятия" loading="lazy" width="560" height="448" />
+            <div class="item-body">
+              <h3>Экспресс-чистка форсунок без снятия</h3>
+              <p>Промывка инжектора и топливной системы без демонтажа.</p>
+              <div class="item-foot"><b>от 3 500 ₽</b><a href="#booking" class="item-btn" data-service="Экспресс-чистка форсунок без снятия">Записаться</a></div>
+            </div>
           </article>
 
         </div>
-        <p class="price-note">Также выполняем ремонт тормозной системы и системы охлаждения, техобслуживание. Есть магазин автозапчастей и автотоваров — подберём оригинал или аналог, привезём под заказ. Цены не являются публичной офертой.</p>
+        <p class="price-note">Также выполняем шиномонтаж, ремонт тормозной системы и системы охлаждения, техобслуживание. Есть магазин автозапчастей и автотоваров — подберём оригинал или аналог, привезём под заказ. Цены и изображения услуг — из карточки сервиса на Яндекс.Картах, не являются публичной офертой.</p>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section section-alt" id="gallery">
+      <div class="container">
+        <span class="eyebrow">Фото</span>
+        <h2>Наш сервис</h2>
+        <p class="section-lead">Фотографии автосервиса на ул. Дыбенко, 99.</p>
+        <div class="gallery" id="gallery-grid">
+          <button type="button"><img src="img/photos/photo-04.jpg" alt="Ремонтная зона с подъёмниками" loading="lazy" /></button>
+          <button type="button"><img src="img/photos/photo-02.jpg" alt="Мастер ремонтирует подвеску" loading="lazy" /></button>
+          <button type="button"><img src="img/photos/photo-06.jpg" alt="Автомобиль на подъёмнике" loading="lazy" /></button>
+          <button type="button"><img src="img/photos/photo-09.jpg" alt="Вывеска АвтоОкей в зоне ремонта" loading="lazy" /></button>
+          <button type="button"><img src="img/photos/photo-05.jpg" alt="Автомобили в ремонтном боксе" loading="lazy" /></button>
+          <button type="button"><img src="img/photos/photo-03.jpg" alt="Автомобиль на подъёмнике" loading="lazy" /></button>
+          <button type="button"><img src="img/photos/photo-08.jpg" alt="Мастер у автомобиля на подъёмнике" loading="lazy" /></button>
+          <button type="button"><img src="img/photos/photo-10.jpg" alt="Ремонт автомобиля на подъёмнике" loading="lazy" /></button>
+          <button type="button"><img src="img/photos/photo-01.jpg" alt="Здание автосервиса" loading="lazy" /></button>
+        </div>
+        <p class="src">Фото из карточки АвтоОкей на <a href="https://yandex.ru/maps/org/avtookey/66669698937/gallery/" target="_blank" rel="noopener">Яндекс.Картах</a>.</p>
       </div>
     </section>
 
     <!-- Brands -->
-    <section class="section section-alt">
+    <section class="section">
       <div class="container">
         <span class="eyebrow">Марки</span>
         <h2>Работаем с отечественными и иномарками</h2>
@@ -465,7 +701,7 @@
     </section>
 
     <!-- Advantages -->
-    <section class="section" id="advantages">
+    <section class="section section-alt" id="advantages">
       <div class="container">
         <span class="eyebrow">Почему АвтоОкей</span>
         <h2>Ремонт, за который не стыдно дать гарантию</h2>
@@ -506,7 +742,7 @@
     </section>
 
     <!-- Reviews -->
-    <section class="section section-alt" id="reviews">
+    <section class="section" id="reviews">
       <div class="container">
         <span class="eyebrow">Отзывы</span>
         <h2>Что говорят клиенты</h2>
@@ -533,7 +769,7 @@
     </section>
 
     <!-- Steps -->
-    <section class="section">
+    <section class="section section-alt">
       <div class="container">
         <span class="eyebrow">Как проходит ремонт</span>
         <h2>Четыре простых шага</h2>
@@ -548,7 +784,7 @@
     </section>
 
     <!-- Booking -->
-    <section class="section section-alt" id="booking">
+    <section class="section" id="booking">
       <div class="container booking">
         <div>
           <span class="eyebrow">Запись</span>
@@ -611,7 +847,7 @@
     </section>
 
     <!-- Contacts -->
-    <section class="section" id="contacts">
+    <section class="section section-alt" id="contacts">
       <div class="container">
         <span class="eyebrow">Контакты</span>
         <h2>Как нас найти</h2>
@@ -639,6 +875,13 @@
     </div>
   </footer>
 
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фото">
+    <img alt="" />
+    <button type="button" class="lb-btn lb-close" aria-label="Закрыть">×</button>
+    <button type="button" class="lb-btn lb-prev" aria-label="Предыдущее фото">‹</button>
+    <button type="button" class="lb-btn lb-next" aria-label="Следующее фото">›</button>
+  </div>
+
   <div class="callbar">
     <a href="tel:+79277002671" class="btn btn-ghost">Позвонить</a>
     <a href="#booking" class="btn btn-primary">Записаться</a>
@@ -646,6 +889,59 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Фильтр каталога
+    (function () {
+      var chips = document.querySelectorAll('.chip');
+      var items = document.querySelectorAll('#catalog .item');
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          var f = chip.getAttribute('data-filter');
+          chips.forEach(function (c) { c.classList.toggle('active', c === chip); });
+          items.forEach(function (it) { it.hidden = f !== 'all' && it.getAttribute('data-cat') !== f; });
+        });
+      });
+    })();
+
+    // «Записаться» из каталога подставляет услугу в форму
+    (function () {
+      var form = document.getElementById('bookingForm');
+      var map = { engine: 'Двигатель и ГРМ', kpp: 'КПП / АКПП', chassis: 'Ходовая, развал-схождение', electric: 'Автоэлектрика', ac: 'Кондиционер' };
+      document.querySelectorAll('.item-btn').forEach(function (a) {
+        a.addEventListener('click', function () {
+          var opt = map[a.closest('.item').getAttribute('data-cat')] || '';
+          for (var i = 0; i < form.service.options.length; i++) {
+            if (form.service.options[i].value === opt || form.service.options[i].text === opt) { form.service.selectedIndex = i; break; }
+          }
+          form.comment.value = 'Интересует: ' + a.getAttribute('data-service');
+        });
+      });
+    })();
+
+    // Просмотр фото
+    (function () {
+      var imgs = Array.prototype.slice.call(document.querySelectorAll('#gallery-grid img'));
+      var lb = document.getElementById('lightbox');
+      var big = lb.querySelector('img');
+      var cur = 0;
+      function show(i) {
+        cur = (i + imgs.length) % imgs.length;
+        big.src = imgs[cur].src; big.alt = imgs[cur].alt;
+        lb.classList.add('open');
+      }
+      function close() { lb.classList.remove('open'); }
+      imgs.forEach(function (img, i) { img.parentNode.addEventListener('click', function () { show(i); }); });
+      lb.querySelector('.lb-close').addEventListener('click', close);
+      lb.querySelector('.lb-prev').addEventListener('click', function () { show(cur - 1); });
+      lb.querySelector('.lb-next').addEventListener('click', function () { show(cur + 1); });
+      lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(cur - 1);
+        if (e.key === 'ArrowRight') show(cur + 1);
+      });
+    })();
 
     (function () {
       var form = document.getElementById('bookingForm');

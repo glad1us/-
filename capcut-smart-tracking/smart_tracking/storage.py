@@ -14,8 +14,18 @@ from .camera import CameraSettings, MODE_TITLES, settings_for_mode
 from .tracking import TrackData
 
 
+def _portable_dir():
+    """Data folder next to a portable install (embedded Python or a built .exe), if any."""
+    if getattr(sys, "frozen", False):
+        return os.path.join(os.path.dirname(sys.executable), "data")
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    if os.path.normcase(os.path.dirname(os.path.abspath(sys.prefix))) == os.path.normcase(root):
+        return os.path.join(root, "data")
+    return None
+
+
 def app_dir() -> str:
-    base = os.environ.get("SMART_TRACKING_HOME")
+    base = os.environ.get("SMART_TRACKING_HOME") or _portable_dir()
     if not base:
         if sys.platform == "win32":
             base = os.path.join(os.environ.get("APPDATA", os.path.expanduser("~")), "CapCutSmartTracking")

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>АвтоОкей — автосервис на ул. Дыбенко, 99 в Самаре</title>
+  <meta name="description" content="Автосервис АвтоОкей в Самаре, ул. Дыбенко, 99: ремонт двигателя, КПП и АКПП, ходовой, электрики, кондиционера, развал-схождение, магазин автозапчастей. Гарантия 1 год на работу и запчасти. Запись: +7 927 700-26-71." />
+  <meta name="theme-color" content="#121417" />
+  <meta property="og:title" content="АвтоОкей — автосервис на ул. Дыбенко, 99 в Самаре" />
+  <meta property="og:description" content="Ремонт отечественных и иномарок, магазин запчастей, гарантия 1 год. Запись: +7 927 700-26-71." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff6a13'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='%23121417'%3EAO%3C/text%3E%3C/svg%3E" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "АвтоОкей",
+    "telephone": "+7-927-700-26-71",
+    "email": "avtookey12@mail.ru",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Дыбенко, 99",
+      "addressLocality": "Самара",
+      "postalCode": "443067",
+      "addressCountry": "RU"
+    },
+    "openingHours": "Mo-Su 08:00-22:00",
+    "priceRange": "₽₽",
+    "paymentAccepted": "Наличные, банковская карта, безналичный расчёт"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #121417;
+      --bg-2: #1a1d22;
+      --card: #20242a;
+      --line: #2e333b;
+      --text: #f2f3f5;
+      --muted: #a6adb8;
+      --accent: #ff6a13;
+      --accent-2: #ff8a3d;
+      --ok: #3ccf7a;
+      --radius: 16px;
+      --container: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+    h1, h2, h3 { line-height: 1.2; margin: 0; }
+    h2 { font-size: clamp(26px, 3.4vw, 38px); margin-bottom: 12px; }
+    .section { padding: 80px 0; }
+    .section-alt { background: var(--bg-2); }
+    .section-lead { color: var(--muted); max-width: 680px; margin: 0 0 36px; }
+    .eyebrow {
+      display: inline-block; font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--accent); font-weight: 700; margin-bottom: 10px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 14px 24px; border-radius: 999px; font-weight: 700; font-size: 16px;
+      text-decoration: none; border: 2px solid transparent; cursor: pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      font-family: inherit;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: #121417; }
+    .btn-primary:hover { background: var(--accent-2); }
+    .btn-ghost { border-color: var(--line); color: var(--text); background: transparent; }
+    .btn-ghost:hover { border-color: var(--accent); }
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    /* Header */
+    .header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(18, 20, 23, .92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 70px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; font-size: 20px; }
+    .logo-mark {
+      width: 38px; height: 38px; border-radius: 10px; background: var(--accent); color: #121417;
+      display: grid; place-items: center; font-size: 15px; font-weight: 900;
+    }
+    .nav { display: flex; gap: 26px; }
+    .nav a { text-decoration: none; color: var(--muted); font-size: 15px; }
+    .nav a:hover { color: var(--text); }
+    .header-phone { text-decoration: none; font-weight: 700; white-space: nowrap; }
+    .header-phone small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; text-align: right; }
+    .header-right { display: flex; align-items: center; gap: 18px; }
+
+    /* Hero */
+    .hero { padding: 70px 0 80px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(600px 400px at 85% 20%, rgba(255,106,19,.16), transparent 70%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,.018) 0 2px, transparent 2px 14px);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; display: grid; grid-template-columns: 1.25fr 1fr; gap: 48px; align-items: center; }
+    .hero h1 { font-size: clamp(32px, 4.8vw, 56px); margin-bottom: 18px; }
+    .hero h1 span { color: var(--accent); }
+    .hero-sub { font-size: 18px; color: var(--muted); margin: 0 0 28px; max-width: 560px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 22px; color: var(--muted); font-size: 15px; }
+    .hero-meta b { color: var(--text); }
+    .hero-card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 28px;
+      box-shadow: 0 30px 60px rgba(0,0,0,.35);
+    }
+    .rating { display: flex; align-items: center; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); margin-bottom: 20px; }
+    .rating-num { font-size: 52px; font-weight: 900; line-height: 1; }
+    .stars { color: #ffc531; font-size: 20px; letter-spacing: 2px; }
+    .rating small { color: var(--muted); display: block; font-size: 14px; }
+    .hero-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+    .hero-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .check {
+      flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: rgba(60,207,122,.15);
+      color: var(--ok); display: grid; place-items: center; font-size: 14px; font-weight: 900; margin-top: 1px;
+    }
+
+    /* Strip */
+    .strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-2); }
+    .strip-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .strip-item { padding: 26px 20px; border-right: 1px solid var(--line); }
+    .strip-item:last-child { border-right: 0; }
+    .strip-item b { display: block; font-size: 24px; color: var(--accent); }
+    .strip-item span { color: var(--muted); font-size: 14px; }
+
+    /* Services */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .svc {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px;
+      display: flex; flex-direction: column;
+    }
+    .svc-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .svc-icon {
+      width: 44px; height: 44px; border-radius: 12px; background: rgba(255,106,19,.12); color: var(--accent);
+      display: grid; place-items: center; flex-shrink: 0;
+    }
+    .svc-icon svg { width: 24px; height: 24px; }
+    .svc h3 { font-size: 19px; }
+    .price-list { list-style: none; margin: 0; padding: 0; }
+    .price-list li {
+      display: flex; justify-content: space-between; gap: 14px; padding: 9px 0;
+      border-bottom: 1px dashed var(--line); font-size: 15px;
+    }
+    .price-list li:last-child { border-bottom: 0; }
+    .price-list .p { white-space: nowrap; font-weight: 700; color: var(--text); }
+    .price-list .n { color: var(--muted); }
+    .price-note { color: var(--muted); font-size: 14px; margin-top: 24px; }
+
+    /* Brands */
+    .brands { display: flex; flex-wrap: wrap; gap: 10px; }
+    .brand {
+      padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--card);
+      font-weight: 600; font-size: 15px;
+    }
+
+    /* Advantages */
+    .adv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .adv { padding: 26px; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line); }
+    .adv-num { font-size: 14px; font-weight: 800; color: var(--accent); margin-bottom: 10px; }
+    .adv h3 { font-size: 19px; margin-bottom: 8px; }
+    .adv p { margin: 0; color: var(--muted); font-size: 15px; }
+
+    /* Reviews */
+    .rev-wrap { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; align-items: start; }
+    .bars { display: grid; gap: 16px; }
+    .bar-row { display: grid; grid-template-columns: 150px 1fr 48px; gap: 14px; align-items: center; font-size: 15px; }
+    .bar { height: 10px; border-radius: 99px; background: var(--line); overflow: hidden; }
+    .bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); border-radius: 99px; }
+    .bar-row b { text-align: right; }
+    .themes { display: grid; gap: 14px; }
+    .theme { padding: 18px 20px; border-left: 3px solid var(--accent); background: var(--card); border-radius: 0 12px 12px 0; }
+    .theme p { margin: 0; color: var(--muted); }
+    .theme b { display: block; margin-bottom: 4px; color: var(--text); }
+    .src { color: var(--muted); font-size: 13px; margin-top: 18px; }
+
+    /* Steps */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: s; }
+    .step { position: relative; padding: 26px 22px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+    .step::before {
+      counter-increment: s; content: counter(s);
+      width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+      background: var(--accent); color: #121417; font-weight: 900; margin-bottom: 14px;
+    }
+    .step h3 { font-size: 17px; margin-bottom: 6px; }
+    .step p { margin: 0; color: var(--muted); font-size: 15px; }
+
+    /* Booking */
+    .booking { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: start; }
+    .form { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 30px; display: grid; gap: 14px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    label.f { display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+    .form input[type=text], .form input[type=tel], .form select, .form textarea {
+      width: 100%; padding: 13px 14px; border-radius: 12px; border: 1px solid var(--line);
+      background: var(--bg); color: var(--text); font: inherit; font-size: 16px;
+    }
+    .form textarea { min-height: 90px; resize: vertical; }
+    .form input:focus, .form select:focus, .form textarea:focus { outline: none; border-color: var(--accent); }
+    .consent { display: flex; gap: 10px; font-size: 13px; color: var(--muted); align-items: flex-start; }
+    .consent input { margin-top: 3px; accent-color: var(--accent); }
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .form-status { font-size: 15px; min-height: 22px; margin: 0; }
+    .form-status.ok { color: var(--ok); }
+    .form-status.err { color: #ff6b6b; }
+    .contact-cards { display: grid; gap: 14px; margin-top: 26px; }
+    .contact-card { display: flex; gap: 14px; align-items: center; padding: 16px 18px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; text-decoration: none; }
+    .contact-card:hover { border-color: var(--accent); }
+    .contact-card .svc-icon { width: 40px; height: 40px; }
+    .contact-card small { display: block; color: var(--muted); font-size: 13px; }
+
+    /* Contacts */
+    .contacts { display: grid; grid-template-columns: 1fr 1.6fr; gap: 30px; }
+    .contacts-info { display: grid; gap: 20px; align-content: start; }
+    .ci b { display: block; font-size: 13px; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
+    .ci a, .ci span { font-size: 18px; font-weight: 600; text-decoration: none; }
+    .ci a:hover { color: var(--accent); }
+    .map { border-radius: 20px; overflow: hidden; border: 1px solid var(--line); min-height: 400px; background: var(--card); }
+    .map iframe { width: 100%; height: 100%; min-height: 400px; border: 0; display: block; }
+
+    /* Footer */
+    .footer { border-top: 1px solid var(--line); padding: 30px 0 100px; color: var(--muted); font-size: 14px; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+    .footer a { color: var(--muted); }
+
+    /* Mobile call bar */
+    .callbar { display: none; }
+
+    @media (max-width: 1000px) {
+      .nav { display: none; }
+      .hero-inner, .booking, .contacts, .rev-wrap { grid-template-columns: 1fr; }
+      .services-grid, .adv-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .strip-inner { grid-template-columns: 1fr 1fr; }
+      .strip-item:nth-child(2) { border-right: 0; }
+      .strip-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 56px 0; }
+      .container { padding: 0 16px; }
+      .header-right .btn { display: none; }
+      .header-phone small { display: none; }
+      .hero { padding: 40px 0 56px; }
+      .services-grid, .adv-grid, .steps, .form-row { grid-template-columns: 1fr; }
+      .hero-actions .btn { width: 100%; }
+      .bar-row { grid-template-columns: 110px 1fr 42px; font-size: 14px; }
+      .form { padding: 22px; }
+      .callbar {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+        position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+        padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(18,20,23,.96); border-top: 1px solid var(--line);
+      }
+      .callbar .btn { padding: 12px 10px; font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="АвтоОкей — на главную">
+        <span class="logo-mark">АО</span>
+        <span>АвтоОкей</span>
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a href="#services">Услуги и цены</a>
+        <a href="#advantages">Почему мы</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <div class="header-right">
+        <a class="header-phone" href="tel:+79277002671">
+          +7 927 700-26-71
+          <small>ежедневно 08:00–22:00</small>
+        </a>
+        <a href="#booking" class="btn btn-primary">Записаться</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow">Автосервис в Самаре · ул. Дыбенко, 99</span>
+          <h1>Ремонт автомобиля <span>с гарантией 1 год</span> на работу и запчасти</h1>
+          <p class="hero-sub">
+            Диагностика, двигатель, КПП и АКПП, ходовая, электрика, кондиционер, развал-схождение.
+            Обслуживаем отечественные, европейские, японские, корейские и китайские автомобили.
+            Запчасти — в собственном магазине.
+          </p>
+          <div class="hero-actions">
+            <a href="#booking" class="btn btn-primary">Записаться на ремонт</a>
+            <a href="tel:+79277002671" class="btn btn-ghost">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+              Позвонить мастеру
+            </a>
+          </div>
+          <div class="hero-meta">
+            <span>Работаем <b>ежедневно 08:00–22:00</b></span>
+            <span>Оплата <b>наличными, картой, по безналу</b></span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Рейтинг и гарантии">
+          <div class="rating">
+            <div class="rating-num">4,8</div>
+            <div>
+              <div class="stars" aria-label="Оценка 4,8 из 5">★★★★★</div>
+              <small>рейтинг на Яндекс.Картах</small>
+            </div>
+          </div>
+          <ul class="hero-list">
+            <li><span class="check">✓</span><span><b>Гарантия 1 год</b> на все виды работ и запчасти</span></li>
+            <li><span class="check">✓</span><span>Запчасти <b>в оригинале и аналогах</b>, есть под заказ</span></li>
+            <li><span class="check">✓</span><span>Зона ожидания, <b>Wi‑Fi</b> и парковка</span></li>
+            <li><span class="check">✓</span><span>Скидки и <b>подарочные сертификаты</b></span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Strip -->
+    <section class="strip" aria-label="Коротко о сервисе">
+      <div class="container strip-inner">
+        <div class="strip-item"><b>1 год</b><span>гарантия на работу и запчасти</span></div>
+        <div class="strip-item"><b>4,8 ★</b><span>оценка клиентов на Яндекс.Картах</span></div>
+        <div class="strip-item"><b>08–22</b><span>принимаем автомобили каждый день</span></div>
+        <div class="strip-item"><b>от 300 ₽</b><span>стоимость работ</span></div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <span class="eyebrow">Услуги и цены</span>
+        <h2>Что мы ремонтируем</h2>
+        <p class="section-lead">Цены на работы без учёта стоимости запчастей и расходников. Точную стоимость мастер называет после осмотра или диагностики автомобиля.</p>
+
+        <div class="services-grid">
+
+          <article class="svc">
+            <div class="svc-head">
+              <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="7" width="14" height="10" rx="2"/><path d="M17 10h2l2 2v2l-2 2h-2M7 7V4h6v3M6 17v3M14 17v3"/></svg></div>
+              <h3>Двигатель и ГРМ</h3>
+            </div>
+            <ul class="price-list">
+              <li><span class="n">Замена масла и фильтра с промывкой</span><span class="p">от 800 ₽</span></li>
+              <li><span class="n">Замена воздушного фильтра (ВАЗ / иномарки)</span><span class="p">300 / 400 ₽</span></li>
+              <li><span class="n">Замена ремня (цепи) ГРМ</span><span class="p">от 4 000 ₽</span></li>
+              <li><span class="n">Регулировка клапанов ВАЗ</span><span class="p">от 2 200 ₽</span></li>
+              <li><span class="n">Ремонт ДВС</span><span class="p">от 15 000 ₽</span></li>
+            </ul>
+          </article>
+
+          <article class="svc">
+            <div class="svc-head">
+              <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div>
+              <h3>Коробка передач</h3>
+            </div>
+            <ul class="price-list">
+              <li><span class="n">Замена масла в МКПП (ВАЗ / иномарки)</span><span class="p">700 / 800 ₽</span></li>
+              <li><span class="n">Частичная замена масла в АКПП</span><span class="p">от 3 000 ₽</span></li>
+              <li><span class="n">Замена масла в муфте Haldex</span><span class="p">от 2 500 ₽</span></li>
+              <li><span class="n">Ремонт КПП (ВАЗ, иномарки)</span><span class="p">от 1 000 ₽</span></li>
+              <li><span class="n">Ремонт АКПП</span><span class="p">уточняйте</span></li>
+            </ul>
+          </article>
+
+          <article class="svc">
+            <div class="svc-head">
+              <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg></div>
+              <h3>Ходовая и развал</h3>
+            </div>
+            <ul class="price-list">
+              <li><span class="n">Комплексный осмотр ходовой ВАЗ</span><span class="p">500 ₽</span></li>
+              <li><span class="n">Комплексный осмотр ходовой иномарки</span><span class="p">700 ₽</span></li>
+              <li><span class="n">Развал-схождение</span><span class="p">от 1 300 ₽</span></li>
+              <li><span class="n">Слесарные работы любой сложности</span><span class="p">от 500 ₽</span></li>
+              <li><span class="n">Шиномонтаж</span><span class="p">уточняйте</span></li>
+            </ul>
+          </article>
+
+          <article class="svc">
+            <div class="svc-head">
+              <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+              <h3>Автоэлектрика</h3>
+            </div>
+            <ul class="price-list">
+              <li><span class="n">Диагностика электрооборудования</span><span class="p">от 1 000 ₽</span></li>
+              <li><span class="n">Устранение неисправностей электрики</span><span class="p">от 500 ₽</span></li>
+              <li><span class="n">Ремонт стартера</span><span class="p">1 000 ₽</span></li>
+              <li><span class="n">Ремонт и перепрограммирование ЭБУ</span><span class="p">от 5 000 ₽</span></li>
+              <li><span class="n">Установка доп. оборудования</span><span class="p">от 500 ₽</span></li>
+            </ul>
+          </article>
+
+          <article class="svc">
+            <div class="svc-head">
+              <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1 19.1 4.9"/></svg></div>
+              <h3>Кондиционер</h3>
+            </div>
+            <ul class="price-list">
+              <li><span class="n">Заправка кондиционера любого авто (без стоимости фреона)</span><span class="p">от 2 000 ₽</span></li>
+              <li><span class="n">Ремонт автокондиционера</span><span class="p">2 000 ₽</span></li>
+            </ul>
+          </article>
+
+          <article class="svc">
+            <div class="svc-head">
+              <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+              <h3>Диагностика и чистка</h3>
+            </div>
+            <ul class="price-list">
+              <li><span class="n">Эндоскопия двигателя</span><span class="p">от 2 000 ₽</span></li>
+              <li><span class="n">Проверка дымогенератором</span><span class="p">от 500 ₽</span></li>
+              <li><span class="n">Ультразвуковая чистка форсунок</span><span class="p">от 800 ₽</span></li>
+              <li><span class="n">Экспресс-чистка форсунок без снятия</span><span class="p">от 3 500 ₽</span></li>
+            </ul>
+          </article>
+
+        </div>
+        <p class="price-note">Также выполняем ремонт тормозной системы и системы охлаждения, техобслуживание. Есть магазин автозапчастей и автотоваров — подберём оригинал или аналог, привезём под заказ. Цены не являются публичной офертой.</p>
+      </div>
+    </section>
+
+    <!-- Brands -->
+    <section class="section section-alt">
+      <div class="container">
+        <span class="eyebrow">Марки</span>
+        <h2>Работаем с отечественными и иномарками</h2>
+        <p class="section-lead">Не нашли свою марку — позвоните, скажем сразу, возьмёмся ли за ремонт.</p>
+        <div class="brands">
+          <span class="brand">Lada (ВАЗ)</span>
+          <span class="brand">УАЗ</span>
+          <span class="brand">ГАЗ</span>
+          <span class="brand">Европейские</span>
+          <span class="brand">Японские</span>
+          <span class="brand">Корейские</span>
+          <span class="brand">Китайские</span>
+          <span class="brand">Американские</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advantages -->
+    <section class="section" id="advantages">
+      <div class="container">
+        <span class="eyebrow">Почему АвтоОкей</span>
+        <h2>Ремонт, за который не стыдно дать гарантию</h2>
+        <p class="section-lead">Всё, что ниже, — не обещания с потолка, а то, что указано в нашей карточке и о чём пишут клиенты.</p>
+        <div class="adv-grid">
+          <div class="adv">
+            <div class="adv-num">01</div>
+            <h3>Гарантия 1 год</h3>
+            <p>На все виды работ и на установленные нами запчасти. Если что-то пойдёт не так — исправим.</p>
+          </div>
+          <div class="adv">
+            <div class="adv-num">02</div>
+            <h3>Запчасти на месте</h3>
+            <p>Свой магазин автозапчастей: оригинал и аналоги на выбор, редкие позиции — под заказ.</p>
+          </div>
+          <div class="adv">
+            <div class="adv-num">03</div>
+            <h3>Объясняем, что сломалось</h3>
+            <p>По отзывам клиентов, мастера подробно рассказывают о результатах диагностики и не навязывают лишних работ.</p>
+          </div>
+          <div class="adv">
+            <div class="adv-num">04</div>
+            <h3>Комфортное ожидание</h3>
+            <p>Зона ожидания, туалет, бесплатный Wi‑Fi и парковка. Можно приехать с питомцем.</p>
+          </div>
+          <div class="adv">
+            <div class="adv-num">05</div>
+            <h3>Удобная оплата</h3>
+            <p>Наличные, банковская карта, в том числе кредитная, безналичный расчёт.</p>
+          </div>
+          <div class="adv">
+            <div class="adv-num">06</div>
+            <h3>Скидки</h3>
+            <p>Действует система скидок и скидки для льготных категорий. Есть подарочные сертификаты.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section section-alt" id="reviews">
+      <div class="container">
+        <span class="eyebrow">Отзывы</span>
+        <h2>Что говорят клиенты</h2>
+        <p class="section-lead">Доля положительных упоминаний по темам в отзывах на Яндекс.Картах.</p>
+        <div class="rev-wrap">
+          <div class="bars">
+            <div class="bar-row"><span>Время ожидания</span><span class="bar"><i style="width:94%"></i></span><b>94%</b></div>
+            <div class="bar-row"><span>Техобслуживание</span><span class="bar"><i style="width:86%"></i></span><b>86%</b></div>
+            <div class="bar-row"><span>Запчасти</span><span class="bar"><i style="width:84%"></i></span><b>84%</b></div>
+            <div class="bar-row"><span>Персонал</span><span class="bar"><i style="width:83%"></i></span><b>83%</b></div>
+            <div class="bar-row"><span>Ремонт ходовой</span><span class="bar"><i style="width:78%"></i></span><b>78%</b></div>
+            <div class="bar-row"><span>Ремонт</span><span class="bar"><i style="width:77%"></i></span><b>77%</b></div>
+          </div>
+          <div>
+            <div class="themes">
+              <div class="theme"><b>Быстро и аккуратно</b><p>Клиенты отмечают скорость работы и чистоту.</p></div>
+              <div class="theme"><b>Без навязывания</b><p>Пишут, что лишние работы не предлагают, а результаты диагностики объясняют.</p></div>
+              <div class="theme"><b>Цена соответствует качеству</b><p>Цены называют адекватными, а расходники — качественными.</p></div>
+            </div>
+            <p class="src">Источник: <a href="https://yandex.ru/maps/org/avtookey/66669698937/reviews/" target="_blank" rel="noopener">отзывы об АвтоОкей на Яндекс.Картах</a>. Читайте все отзывы там — мы их не редактируем.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Как проходит ремонт</span>
+        <h2>Четыре простых шага</h2>
+        <p class="section-lead">Без сюрпризов в чеке: сначала согласуем, потом делаем.</p>
+        <div class="steps">
+          <div class="step"><h3>Заявка или звонок</h3><p>Оставьте заявку на сайте или позвоните — подберём удобное время.</p></div>
+          <div class="step"><h3>Осмотр и диагностика</h3><p>Мастер находит причину неисправности и объясняет, что нужно сделать.</p></div>
+          <div class="step"><h3>Согласование</h3><p>Называем стоимость работ и запчастей до начала ремонта.</p></div>
+          <div class="step"><h3>Ремонт и гарантия</h3><p>Выполняем работы и даём гарантию 1 год на работу и запчасти.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section class="section section-alt" id="booking">
+      <div class="container booking">
+        <div>
+          <span class="eyebrow">Запись</span>
+          <h2>Запишитесь на ремонт</h2>
+          <p class="section-lead">Оставьте телефон — мастер-приёмщик перезвонит, уточнит проблему и предложит время. Или свяжитесь с нами напрямую:</p>
+          <div class="contact-cards">
+            <a class="contact-card" href="tel:+79277002671">
+              <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+              <span><b>+7 927 700-26-71</b><small>мастер-приёмщик</small></span>
+            </a>
+            <a class="contact-card" href="https://t.me/+79277002671" target="_blank" rel="noopener">
+              <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7z"/><path d="M22 2 11 13"/></svg></span>
+              <span><b>Написать в Telegram</b><small>ответим в рабочее время</small></span>
+            </a>
+          </div>
+        </div>
+
+        <form class="form" id="bookingForm" action="send.php" method="post" novalidate>
+          <div class="form-row">
+            <label class="f">Ваше имя
+              <input type="text" name="name" autocomplete="name" maxlength="60" required />
+            </label>
+            <label class="f">Телефон *
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+7 ___ ___-__-__" maxlength="20" required />
+            </label>
+          </div>
+          <div class="form-row">
+            <label class="f">Марка и модель
+              <input type="text" name="car" maxlength="60" placeholder="Например, Lada Vesta" />
+            </label>
+            <label class="f">Услуга
+              <select name="service">
+                <option value="">Не знаю / нужна диагностика</option>
+                <option>Двигатель и ГРМ</option>
+                <option>КПП / АКПП</option>
+                <option>Ходовая, развал-схождение</option>
+                <option>Автоэлектрика</option>
+                <option>Кондиционер</option>
+                <option>Замена масла / ТО</option>
+                <option>Шиномонтаж</option>
+                <option>Подбор запчастей</option>
+                <option>Другое</option>
+              </select>
+            </label>
+          </div>
+          <label class="f">Что случилось с автомобилем
+            <textarea name="comment" maxlength="1000" placeholder="Опишите симптомы: стук, ошибка на панели, течь…"></textarea>
+          </label>
+          <div class="hp" aria-hidden="true">
+            <label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+          </div>
+          <label class="consent">
+            <input type="checkbox" name="consent" value="1" required />
+            <span>Даю согласие на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank">политикой конфиденциальности</a>.</span>
+          </label>
+          <button type="submit" class="btn btn-primary">Отправить заявку</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contacts -->
+    <section class="section" id="contacts">
+      <div class="container">
+        <span class="eyebrow">Контакты</span>
+        <h2>Как нас найти</h2>
+        <p class="section-lead">Советский район, рядом с остановкой «Улица Советской Армии» (около 175 м), примерно 1 км от станции метро «Советская».</p>
+        <div class="contacts">
+          <div class="contacts-info">
+            <div class="ci"><b>Адрес</b><span>Самара, ул. Дыбенко, 99</span></div>
+            <div class="ci"><b>Телефон</b><a href="tel:+79277002671">+7 927 700-26-71</a></div>
+            <div class="ci"><b>Режим работы</b><span>Ежедневно 08:00–22:00</span></div>
+            <div class="ci"><b>Почта</b><a href="mailto:avtookey12@mail.ru">avtookey12@mail.ru</a></div>
+            <div><a class="btn btn-ghost" href="https://yandex.ru/maps/org/avtookey/66669698937/" target="_blank" rel="noopener">Построить маршрут</a></div>
+          </div>
+          <div class="map">
+            <iframe src="https://yandex.ru/map-widget/v1/?oid=66669698937&amp;z=16" title="АвтоОкей на карте" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year">2026</span> АвтоОкей. ИП Серова Анастасия Игоревна, ИНН 631232669818, ОГРНИП 324632700158694</div>
+      <div><a href="privacy.html">Политика конфиденциальности</a></div>
+    </div>
+  </footer>
+
+  <div class="callbar">
+    <a href="tel:+79277002671" class="btn btn-ghost">Позвонить</a>
+    <a href="#booking" class="btn btn-primary">Записаться</a>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function () {
+      var form = document.getElementById('bookingForm');
+      var status = document.getElementById('formStatus');
+      var btn = form.querySelector('button[type=submit]');
+
+      function setStatus(text, cls) {
+        status.textContent = text;
+        status.className = 'form-status' + (cls ? ' ' + cls : '');
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var digits = form.phone.value.replace(/\D/g, '');
+        if (digits.length < 10 || digits.length > 12) {
+          setStatus('Проверьте номер телефона.', 'err');
+          form.phone.focus();
+          return;
+        }
+        if (!form.consent.checked) {
+          setStatus('Нужно согласие на обработку персональных данных.', 'err');
+          return;
+        }
+        btn.disabled = true;
+        setStatus('Отправляем…');
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+          .then(function (res) {
+            if (res.ok && res.d.ok) {
+              form.reset();
+              setStatus('Спасибо! Заявка отправлена — мы перезвоним в рабочее время.', 'ok');
+            } else {
+              setStatus(res.d.error || 'Не удалось отправить. Позвоните нам: +7 927 700-26-71', 'err');
+            }
+          })
+          .catch(function () {
+            setStatus('Не удалось отправить. Позвоните нам: +7 927 700-26-71', 'err');
+          })
+          .finally(function () { btn.disabled = false; });
+      });
+    })();
+  </script>
+</body>
+</html>

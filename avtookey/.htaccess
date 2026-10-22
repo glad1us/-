@@ -1,0 +1,4 @@
+# Служебные файлы не открываются из браузера
+<FilesMatch "^(config|max)\.php$">
+  Require all denied
+</FilesMatch>

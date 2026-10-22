@@ -1,13 +1,9 @@
 <?php
 // Обработчик заявки с сайта АвтоОкей.
-// Отправляет заявку в Telegram (если указан бот) и/или на почту.
+// Отправляет заявку в MAX (если настроен бот) и/или на почту. Настройки — в config.php.
 
-// ===== Настройки =====
-$MAIL_TO        = "avtookey12@mail.ru";    // куда слать заявки на почту ("" — не слать)
-$TG_BOT_TOKEN   = "";                       // токен бота от @BotFather ("" — не слать в Telegram)
-$TG_CHAT_ID     = "";                       // id чата/пользователя, куда бот пишет заявки
-$MIN_INTERVAL   = 30;                       // минимум секунд между заявками с одного IP
-// =====================
+require __DIR__ . "/config.php";
+require __DIR__ . "/max.php";
 
 header("Content-Type: application/json; charset=UTF-8");
 
@@ -53,7 +49,6 @@ $lock = sys_get_temp_dir() . "/avtookey_" . md5($ip);
 if (is_file($lock) && time() - filemtime($lock) < $MIN_INTERVAL) {
     reply(false, "Заявка уже отправлена. Подождите немного или позвоните нам.", 429);
 }
-@touch($lock);
 
 $text = "Новая заявка с сайта АвтоОкей\n\n"
       . "Имя: " . ($name !== "" ? $name : "—") . "\n"
@@ -65,16 +60,11 @@ $text = "Новая заявка с сайта АвтоОкей\n\n"
 
 $sent = false;
 
-if ($TG_BOT_TOKEN !== "" && $TG_CHAT_ID !== "") {
-    $ctx = stream_context_create(["http" => [
-        "method"  => "POST",
-        "header"  => "Content-Type: application/x-www-form-urlencoded",
-        "content" => http_build_query(["chat_id" => $TG_CHAT_ID, "text" => $text]),
-        "timeout" => 10,
-    ]]);
-    $res = @file_get_contents("https://api.telegram.org/bot{$TG_BOT_TOKEN}/sendMessage", false, $ctx);
-    if ($res !== false && strpos($res, '"ok":true') !== false) {
-        $sent = true;
+if ($MAX_BOT_TOKEN !== "") {
+    foreach ($MAX_CHAT_IDS as $chatId) {
+        if (max_send($MAX_BOT_TOKEN, $chatId, $text)) {
+            $sent = true;
+        }
     }
 }
 
@@ -95,4 +85,5 @@ if (!$sent) {
     reply(false, "Не удалось отправить заявку. Позвоните нам: +7 927 700-26-71", 500);
 }
 
+@touch($lock);
 reply(true);
